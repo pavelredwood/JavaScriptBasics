@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age Calculator</title>
+    <style>
+      input {
+        font-size: 2em;
+        margin: 10px 1px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <input class="numberInput" type="text" />
+    <p></p>
+    <script>
+      const input = document.querySelector(".numberInput");
+      const para = document.querySelector("p");
+
+      function ageCalc(num) {
+        let todayYear = 2023;
+        return todayYear - num;
+      }
+
+      input.addEventListener("change", () => {
+        const num = parseFloat(input.value);
+        if (isNaN(num)) {
+          para.textContent = "You need to enter a YYYYear of birth!";
+        } else {
+          para.textContent = `Your age is ${ageCalc(num)}`;
+        }
+      });
+    </script>
+  </body>
+</html>
